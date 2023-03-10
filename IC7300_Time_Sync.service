@@ -1,0 +1,15 @@
+[Unit]
+Description=Sync time from NTP server and then update 7300
+After=mediacenter.service
+[Service]
+# If User and Group are not specified, then by default systemd ExecStart runs as root
+User=root
+Group=root
+Type=simple
+ExecStart=sudo /usr/bin/python /home/pi/code/IC7300_Time_Sync/IC7300_Time_Sync.py
+# write to journal or within script to separate log file
+StandardOutput=/home/pi/code/IC7300_Time_Sync/IC7300_Time_Sync.log
+StandardError=/home/pi/code/IC7300_Time_Sync/IC7300_Time_Sync.log
+Restart=Always
+[Install]
+WantedBy=multi-user.target

@@ -28,13 +28,17 @@ At the top of the script (IC7300_Time_Sync.py) are a few variables you'll have t
 
 Add this to crontab to run this script every 6 hours
 
-run sudo crontab -e, once the editor opens, copy paste the below line, save and close
+run the following commands, one after the other
 
-0 */6 * * * sudo python /home/pi/code/IC7300_Time_Sync/IC7300_Time_Sync.py
+** sudo crontab -e **
+
+once the editor opens, copy paste the below line, save and close
+
+** 0 */6 * * * sudo python /home/pi/code/IC7300_Time_Sync/IC7300_Time_Sync.py **
 
 once you exit, run this command to restart the cron service
 
-sudo service cron restart
+** sudo service cron restart **
 
 
 Thanks - vu3gwn@outlook.com

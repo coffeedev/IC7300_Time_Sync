@@ -1,0 +1,3 @@
+@reboot python /home/pi/code/IC7300_Time_Sync/IC7300_Time_Sync.py
+0 * * * * python /home/pi/code/IC7300_Time_Sync/IC7300_Time_Sync.py
+0 */6 * * * python /home/pi/code/IC7300_Time_Sync/IC7300_Time_Sync.py

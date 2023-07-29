@@ -135,17 +135,26 @@ class NTPSyncTime(object):
 
 if __name__ == '__main__':
 
-    printMsg("Starting: TimeSync")
+    printMsg("Starting: TimeSync : NTPSyncTime")
     try:
 
         st = NTPSyncTime()
         st.syncTime()
+        printMsg("NTPsync done.")
+
+    except Exception as error:
+        printMsg("ERROR: NTPSyncTime: " + error)
+
+
+    printMsg("Starting: TimeSync : IC7300SyncTime")
+    try:
+
         tx = IC7300SyncTime()
         tx.syncTime()
+        printMsg("IC7300TimeSync done.")
 
-    except:
-        printMsg("ERROR: an unhandled exception occurred")
+    except Exception as error:
+        printMsg("ERROR: IC7300SyncTime: " + error)
 
     finally:
-        printMsg("all done.")
         logFile.close()
